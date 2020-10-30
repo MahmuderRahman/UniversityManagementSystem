@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+</head>
+<body>
+    <center> <div class="navbar navbar-inverse navbar-fixed-top"></center>
+    <div class="container">
+        <div c class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "navbar-brand" })</li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Academic <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Department", "Index", "Department", null, new { @class = "navbar-brand" })</li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Course <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Course", "Index", "Course", null, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("View Course", "Index", "ViewCourse", null, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Enroll Course", "EnrollCourse", "EnrollCourse", null, new { @class = "navbar-brand" })</li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Teacher <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Teacher", "Index", "Teacher", null, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Assign Course to Teacher", "Index", "CourseTeacher", null, new { @class = "navbar-brand" })</li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Student <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Register Student", "Index", "RegisterStudent", null, new { @class = "navbar-brand" })</li>
+
+                        <li>@Html.ActionLink("Student Result", "StudentResult", "StudentResult", null, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("View Result", "ViewResult", "ViewResult", null, new { @class = "navbar-brand" })</li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Room <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Allocate Class Room", "AllocateClassRoom", "AllocateClassRoom", null, new { @class = "navbar-brand" })</li>
+                        <li>@Html.ActionLink("Class Schedule Room", "Index", "ClassScheduleAndRoom", null, new { @class = "navbar-brand" })</li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<h4>Teacher</h4>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/Datatable/datatables.css" rel="stylesheet" />
+<script src="~/Content/Datatable/datatables.js"></script>
+<script src="~/Scripts/Library/lib/AjaxManager.js"></script>
+<script src="~/Scripts/Library/lib/Messages.js"></script>
+<link href="~/Content/notifIt.css" rel="stylesheet" />
+<script src="~/Scripts/Library/lib/notifit.js"></script>
+<style>
+    span{
+        color:red;
+    }
+</style>
+
+<div class="row" style="margin-top:30px">
+    <div class="col-md-12">
+        @*modal start*@
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Add Teacher</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="teacherForm">
+
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Name</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="nameText" name="Name" type="text" value="" placeholder="Name" /> <span class="required">*</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Address</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="addressText" name="Address" type="text" value="" placeholder="Address" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Email</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="emailText" name="Email" type="text" value="" placeholder="Email" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Contact Number</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="contactNoText" name="ContactNo" type="text" value="" placeholder="Contact Number" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Designation</label>
+                                    <div class="col-md-8">
+                                        <select class="form-control" id="designationDDL" name="DesignationId"></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Department</label>
+                                    <div class="col-md-8">
+                                        <select class="form-control" id="departmentDDL" name="DepartmentId"></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Total Credit</label>
+                                    <div class="col-md-8">
+                                        <input class="form-control" id="totalCreditText" name="TotalCredit" type="text" value="" placeholder="Total Credit" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-4 col-md-8">
+                                        <button style="margin-right: 5px; width: 70px" id="saveButton" type="button" class="btn btn-success">Save</button>
+                                        <input style="width: 70px" id="clearButton" type="reset" value="Clear" class="btn btn-primary" />
+                                    </div>
+                                    @*</div>*@
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*modal end*@
+    </div>
+    <div class="col-md-12 well table table-responsive">
+        <div>
+            <button id="openModalButton" data-toggle="modal" data-target="#myModal" class="btn btn-success">Add New</button>
+        </div>
+        <div style="padding-top: 30px">
+            <table class="table table-bordered table-striped table-condensed" id="tableElement" style="width: 100%"></table>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Custom/Teacher.js"></script>

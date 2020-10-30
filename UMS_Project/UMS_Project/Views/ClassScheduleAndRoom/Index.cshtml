@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<h4>Class Schedule And Room</h4>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="~/Content/Datatable/datatables.css" rel="stylesheet"/>
+<link href="~/Content/jquery.datetimepicker.css" rel="stylesheet" />
+<script src="~/Content/Datatable/datatables.js"></script>
+<script src="~/Scripts/Library/lib/AjaxManager.js"></script>
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/jquery.datetimepicker.js"></script>
+<script src="~/Scripts/dateTimePickerLoader.js"></script>
+<script src="~/Scripts/Library/lib/site.js"></script>
+@Styles.Render("~/styles/DataTable")
+<style>
+    .dt-center {
+        text-align: center;
+    }
+
+    .spnDataTableEdit {
+        font-weight: bold;
+        color: #0083bd;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .spnDataTableDelete {
+        font-weight: bold;
+        color: red;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+</style>
+
+<div class="row" style="margin-top: 30px">
+    <div class="col-md-12">
+        <form id="clsScheduleAndRoomForm" class="form-horizontal" method="POST">
+
+            <div class="form-group">
+                <label class="col-md-4 control-label">Department</label>
+                <div class="col-md-8 ">
+                    <select class="form-control" id="departmentDDL" name="DepartmentId"></select>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 well">
+        <div style="padding-top: 40px">
+            <table class="table table-bordered" id="tableElement" style="width: 100%"></table>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Custom/ClassScheduleAndRoomInfo.js"></script>
+
+
+
+
+
+
